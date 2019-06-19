@@ -1,9 +1,9 @@
 " ******************************************************************
-" 		NEOVIM CONFIGURATION
-" 		AUTHOR: ROHIT ROY
-" 		DATE: JUNE 2019
+"               NEOVIM CONFIGURATION
+"               AUTHOR: ROHIT ROY
+"               DATE: JUNE 2019
 "
-" ******************************************************************	
+" ******************************************************************
 " GENERAL CONFIGURATIONS:
 " ******************************************************************
 set number
@@ -51,7 +51,6 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-
 " ******************************************************************
 " PLUGIN MANAGEMENT:
 " ******************************************************************
@@ -73,9 +72,6 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 " Insert plugins here in appropriate format
 
-" Deoplete auto completion:
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Easy surrounding parenthesis:
 Plug 'tpope/vim-surround'
 
@@ -88,9 +84,6 @@ Plug 'ryanoasis/vim-devicons'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 
-" Vim Airline
-Plug 'vim-airline/vim-airline'
-
 " Buffer Indicator
 Plug 'bling/vim-bufferline'
 
@@ -100,14 +93,17 @@ Plug 'joshdick/onedark.vim'
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
 
-call plug#end()
+" Airline Plugin
+Plug 'vim-airline/vim-airline'
 
+" Neovim deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+call plug#end()
 
 " ******************************************************************
 " CUSTOM PLUGIN SETTINGS:
 " ******************************************************************
-" Enable deoplete to run at startup
-let g:deoplete#enable_at_startup = 1
 
 " NERDTree Config
 autocmd StdinReadPre * let s:std_in=1
@@ -119,19 +115,42 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 20
 
-" Vim Airline Config
+" Airline Vim settings:
 set t_Co=256
 " air-line
 let g:airline_powerline_fonts = 1
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" testing extra-powerline-symbols
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
-" set font terminal font or set gui vim font
-" to a Nerd Font (https://github.com/ryanoasis/nerd-fonts):
-" set guifont=DroidSansMono\ Nerd\ Font\ 12
-
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " Theme settings:
 syntax on
@@ -155,3 +174,6 @@ map <leader>ss :setlocal spell!<cr>
 " Key binding for NERDTree
 map <leader>n :NERDTreeToggle<CR>
 
+" Quick buffer close
+nmap <leader>e :wq<cr>
+nmap <leader>ee :q!<cr>

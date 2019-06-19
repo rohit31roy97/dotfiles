@@ -3,7 +3,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -32,7 +31,7 @@ font pango:DroidSansMono Nerd Font 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -238,9 +237,9 @@ exec_always nm-applet
 
 # setup i3-gaps:
 for_window [class=".*"] border pixel 0
-gaps inner 50
+gaps inner 40
 
 # Automatically load some programs
-exec gnome-terminal
+exec termite
 
 #exec --no-startup-id i3-msg 'workspace 2; exec gnome-terminal -e freetalk; bash
