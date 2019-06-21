@@ -2,7 +2,7 @@
 font = FantasqueSansMono Nerd Font Mono 15
 
 [colors]
-foreground          = #abb2bf
+foreground          = #ffffff
 foreground_bold     = #b6bdca
 cursor              = #b6bdca
 cursor_foreground   = #282c34

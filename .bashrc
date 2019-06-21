@@ -23,6 +23,9 @@ fi
 HISTSIZE=-1
 HISTFILESIZE=-1
 
+# Add my bash script dir to PATH:
+PATH="$HOME/dev/bash-scripts:$PATH"
+
 # Custom user aliases:
 alias ls='ls -al --color=always'
 alias src='source ~/.bashrc'
@@ -43,3 +46,8 @@ alias cconf='nvim ~/.config/compton/compton.conf'
 alias blconf='nvim ~/.config/i3/i3blocks.conf'
 alias ~='cd ~'
 alias dev='cd ~/dev/'
+alias xrc='xrdb ~/.Xresources'
+alias rd='rm -rf'
+
+# Custom user environment variables:
+export DEVDIR="$HOME/dev"
