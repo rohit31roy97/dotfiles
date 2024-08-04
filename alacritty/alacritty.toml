@@ -1,0 +1,25 @@
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 0.98
+dimensions = { columns = 100, lines = 46}
+position = { x = 5, y = 30 }
+
+
+
+[window.padding]
+x = 25
+y = 20
+
+
+[font]
+size = 18.0
+
+[scrolling]
+history = 10000
+
