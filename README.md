@@ -13,7 +13,7 @@ Associated configuration files:
 - ZSH: `zshrc` -> `~/.zshrc`, `.oh-my-zsh/` -> `~/.oh-my-zsh/`
 
 ## TMUX commands:
-- `C-a` : prefix
+- `C-a` : prefix (to be used before all key-bindings)
 - `C-a C-e` : open tmux config file to edit and load upon closing
 - `C-a C-r` : reload tmux config file
 - `M-Left` : previous pane
